@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class RateDiscountPolicyTest {
+public class RateDiscountPolicyTestObj {
     RateDiscountPolicy discountPolicy = new RateDiscountPolicy();
 
     @Test

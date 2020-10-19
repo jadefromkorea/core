@@ -4,8 +4,8 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class MemberServiceTest {
-    MemberService memberService = new MemberServiceImpl();
+public class MemberServiceTestObj {
+    MemberService memberService = new MemberServiceImplObj();
 
     @Test
     @DisplayName("테스트")

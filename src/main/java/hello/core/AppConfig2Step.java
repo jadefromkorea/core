@@ -1,0 +1,30 @@
+package hello.core;
+
+import hello.core.discount.DiscountPolicy;
+import hello.core.discount.FixDiscountPolicy;
+import hello.core.discount.RateDiscountPolicy;
+import hello.core.member.MemberRepositoty;
+import hello.core.member.MemberService;
+import hello.core.member.MemberServiceImpl;
+import hello.core.member.MemoryMemberRepositoty;
+import hello.core.order.OrderService;
+import hello.core.order.OrderServiceImpl;
+
+public class AppConfig2Step {
+    public MemberService memberService() {
+        return new MemberServiceImpl(memberRepositoty());
+    }
+
+    public OrderService orderService() {
+        return new OrderServiceImpl(memberRepositoty(), discountPolicy());
+    }
+
+    public MemberRepositoty memberRepositoty() {
+        return new MemoryMemberRepositoty();
+    }
+
+    public DiscountPolicy discountPolicy() {
+//        return new FixDiscountPolicy();
+        return new RateDiscountPolicy();
+    }
+}

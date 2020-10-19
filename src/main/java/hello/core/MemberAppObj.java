@@ -3,16 +3,16 @@ package hello.core;
 import hello.core.member.Grade;
 import hello.core.member.Member;
 import hello.core.member.MemberService;
+import hello.core.member.MemberServiceImplObj;
 
-public class MemberApp {
+public class MemberAppObj {
     public static void main(String[] args) {
-        AppConfig1Step appConfig1Step = new AppConfig1Step();
-        MemberService memberService = appConfig1Step.memberService();
+        MemberService memberService = new MemberServiceImplObj();
         Member member = new Member(1L, "memberA", Grade.VIP);
         memberService.join(member);
 
         Member findMember = memberService.findMember(1L);
         System.out.println("new member = " + member.getName());
-        System.out.println("find member = " + findMember.getName());
+        System.out.println("find member = " + member.getName());
     }
 }

@@ -3,14 +3,15 @@ package hello.core;
 import hello.core.member.Grade;
 import hello.core.member.Member;
 import hello.core.member.MemberService;
+import hello.core.member.MemberServiceImplObj;
 import hello.core.order.Order;
 import hello.core.order.OrderService;
+import hello.core.order.OrderServiceImplOld;
 
-public class OrderApp {
+public class OrderAppObj {
     public static void main(String[] args) {
-        AppConfig1Step appConfig1Step = new AppConfig1Step();
-        MemberService memberService = appConfig1Step.memberService();
-        OrderService orderService = appConfig1Step.orderService();
+        MemberService memberService = new MemberServiceImplObj();
+        OrderService orderService = new OrderServiceImplOld();
 
         long memberId = 1L;
         Member member = new Member(memberId, "itemA", Grade.VIP);
