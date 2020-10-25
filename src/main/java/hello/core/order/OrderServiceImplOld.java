@@ -4,10 +4,10 @@ import hello.core.discount.DiscountPolicy;
 import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepositoty;
-import hello.core.member.MemoryMemberRepositoty;
+import hello.core.member.MemoryMemberRepository;
 
 public class OrderServiceImplOld implements OrderService {
-    private final MemberRepositoty memberRepositoty = new MemoryMemberRepositoty();
+    private final MemberRepositoty memberRepositoty = new MemoryMemberRepository();
 
     //private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
     private final DiscountPolicy discountPolicy = new RateDiscountPolicy();

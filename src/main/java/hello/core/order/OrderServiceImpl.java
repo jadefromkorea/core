@@ -1,10 +1,8 @@
 package hello.core.order;
 
 import hello.core.discount.DiscountPolicy;
-import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepositoty;
-import hello.core.member.MemoryMemberRepositoty;
 
 public class OrderServiceImpl implements OrderService {
 //    private final MemberRepositoty memberRepositoty = new MemoryMemberRepositoty();
