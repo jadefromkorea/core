@@ -8,6 +8,11 @@ public class MemberServiceImpl implements MemberService {
         this.memberRepositoty = memberRepositoty;
     }
 
+    // 테스트 용도
+    public MemberRepositoty getMemberRepositoty() {
+        return memberRepositoty;
+    }
+
     @Override
     public void join(Member member) {
         memberRepositoty.save(member);
