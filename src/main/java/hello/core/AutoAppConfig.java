@@ -5,11 +5,22 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
 
 @Configuration
-//@ComponentScan(excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Configuration.class))
-@ComponentScan(excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Configuration.class), basePackages = {"hello.core.discount", "hello.core.member", "hello.core.order"})
+@ComponentScan(excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Configuration.class))
+//@ComponentScan(excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Configuration.class), basePackages = {"hello.core.discount", "hello.core.member", "hello.core.order"})
+public class AutoAppConfig {
+//    @Bean
+//    public MemberRepositoty memberRepositoty() {
+//        return new MemoryMemberRepository();
+//    }
+}
+
 /*
 참고로 스프링 부트를 사용하면 스프링 부트의 대표 시작 정보인 @SpringBootApplication 를 이 프로젝트 시작 루트 위치에 두는 것이 관례이다. (그리고 이 설정안에 바로 @ComponentScan 이 들어있다!)
 
+- 필터
+includeFilters : 컴포넌트 스캔 대상을 추가로 지정한다.
+excludeFilters : 컴포넌트 스캔에서 제외할 대상을 지정한다.
+ 
 - 컴포넌트 스캔 기본 대상
 컴포넌트 스캔은 @Component 뿐만 아니라 다음과 내용도 추가로 대상에 포함한다.
 @Component : 컴포넌트 스캔에서 사용
@@ -30,6 +41,4 @@ import org.springframework.context.annotation.FilterType;
 - 참고: useDefaultFilters 옵션은 기본으로 켜져있는데, 이 옵션을 끄면 기본 스캔 대상들이 제외된다. 그냥 이런 옵션이 있구나 정도 알고 넘어가자.
 */
 
-public class AutoAppConfig {
 
-}
